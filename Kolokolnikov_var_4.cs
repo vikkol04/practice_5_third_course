@@ -22,23 +22,13 @@
                 Console.WriteLine("Invalid input. Please enter a valid number.");
                 return;
             }
-            if (end < 3)
-            {
-                return;
-            }
-            int[] numbers = { 2, 3, 5, 7, 9 };
+            if (end < 3) return;
             for (int i = 2; i < end; i++)
             {
-                foreach (int num in numbers)
+                for (int ch_num = 2; ch_num <= 9; ch_num = ch_num != 4 ? ch_num + 2 : 3)
                 {
-                    if (i != num && i % num == 0)
-                    {
-                        break;
-                    }
-                    if (num == 9)
-                    {
-                        Console.Write($"{i} ");
-                    }
+                    if (i != ch_num && i % ch_num == 0) break;
+                    if (ch_num == 9) Console.Write($"{i} ");
                 }
             }
         }
